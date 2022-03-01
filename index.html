@@ -11,84 +11,166 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>Contentulator</h1>
+    <form>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Contentulator</h1>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h2>Form</h2>
-                <form onsubmit="handleSubmit(form)">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th scope="row"><label for="deadlineInput">Deadline</label></th>
+                                <td>
+                                    <input type="date" class="form-control" id="deadlineInput" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="contentLevelInput">Content Level</label>
+                                    <div class="form-text">
+                                        L3 students get 3 * the GLH of L5 students
+                                    </div>
+                                </th>
+                                <td>
+                                    <select class="form-select" aria-label="Default select example"
+                                        id="contentLevelInput">
+                                        <option selected value="5">Level 5</option>
+                                        <option value="3">Level 3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="totalGLHInput">Total GLH required</label></th>
+                                <td>
+                                    <input type="number" class="form-control" id="totalGLHInput" value="40" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="syllabusDone">Syllabus is already done</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" id="syllabusDone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="hasWalkthroughProject">This course contains a walkthrough
+                                        project</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" id="hasWalkthroughProject">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="walkthroughProjectDone">Walkthrough project is already
+                                        done</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" id="walkthroughProjectDone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="assessmentCriteriaDone">Assessment criteria is already
+                                        agreed</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" class="form-check-input" id="assessmentCriteriaDone">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><label for="avgVideoLength">Average video length in minutes</label></th>
+                                <td>
+                                    <input type="number" class="form-control" id="avgVideoLength" value="7" required>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-12 col-md-6">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Content Type</th>
-                                <th scope="col">Number of Units</th>
+                                <th scope="col">Number of Units left to make</th>
                                 <th scope="col">Calculated GLH</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><label id="textUnitInput">Text Based Unit</label></th>
+                                <th scope="row"><label for="textUnitInput">Text Based Unit</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="textUnitInput">
+                                    <input type="number" class="form-control" id="textUnitInput" value="0" required>
+                                </td>
+                                <td>
+                                    <p id="textUnitGLH"></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="textChallengeInput">Text Based Challenge</label></th>
+                                <td>
+                                    <input type="number" class="form-control" id="textChallengeInput" value="0"
+                                        required>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label id="textChallengeInput">Text Based Challenge</label></th>
+                                <th scope="row"><label for="quizUnitInput">Quiz</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="textChallengeInput">
+                                    <input type="number" class="form-control" id="quizUnitInput" value="0" required>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label id="quizUnitInput">Quiz</label></th>
+                                <th scope="row"><label for="passiveVideoInput">Passive Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="quizUnitInput">
+                                    <input type="number" class="form-control" id="passiveVideoInput" value="0" required>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label id="passiveVideoInput">Passive Video</label></th>
+                                <th scope="row"><label for="operationalVideoInput">Operational Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="passiveVideoInput">
+                                    <input type="number" class="form-control" id="operationalVideoInput" value="0"
+                                        required>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <th scope="row"><label id="operationalVideoInput">Operational Video</label></th>
+                                <th scope="row"><label for="activeVideoInput">Active Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="operationalVideoInput">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><label id="activeVideoInput">Active Video</label></th>
-                                <td>
-                                    <input type="number" class="form-control" id="activeVideoInput">
+                                    <input type="number" class="form-control" id="activeVideoInput" value="0" required>
                                 </td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label id="intensiveVideoInput">Intensive Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="intensiveVideoInput">
+                                    <input type="number" class="form-control" id="intensiveVideoInput" value="0"
+                                        required>
                                 </td>
                                 <td></td>
                             </tr>
                         </tbody>
                     </table>
-                </form>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button"
+                            class="btn btn-primary" onclick="handleSubmit(form)">Calculate</button></div>
 
-            </div>
-            <div class="col-12 col-md-6">
-                <h2>Results</h2>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
