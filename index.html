@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 mb-5">
+                <div class="col-12 col-lg-6 mb-5">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -97,7 +97,7 @@
                     </table>
 
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-lg-6">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -122,50 +122,88 @@
                                     <input type="number" class="form-control" id="textChallengeInput" value="0"
                                         required>
                                 </td>
-                                <td><p id="textChallengeOutput"></p></td>
+                                <td>
+                                    <p id="textChallengeOutput"></p>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="quizUnitInput">Quiz</label></th>
                                 <td>
                                     <input type="number" class="form-control" id="quizUnitInput" value="0" required>
                                 </td>
-                                <td><p id="quizUnitOutput"></p></td>
+                                <td>
+                                    <p id="quizUnitOutput"></p>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="passiveVideoInput">Passive Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="passiveVideoInput" value="0" required>
+                                    <input type="number" class="form-control" id="passiveVideoInput" value="1" required>
                                 </td>
-                                <td><p id="passiveVideoOutput"></p></td>
+                                <td>
+                                    <p id="passiveVideoOutput"></p>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="operationalVideoInput">Operational Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="operationalVideoInput" value="0"
+                                    <!-- value set to 1 for testing, put back to 0 after complete -->
+                                    <input type="number" class="form-control" id="operationalVideoInput" value="1"
                                         required>
                                 </td>
-                                <td><p id="operationalVideoOutput"></p></td>
+                                <td>
+                                    <p id="operationalVideoOutput"></p>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="activeVideoInput">Active Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="activeVideoInput" value="0" required>
+                                    <input type="number" class="form-control" id="activeVideoInput" value="1" required>
                                 </td>
-                                <td><p id="activeVideoOutput"></p></td>
+                                <td>
+                                    <p id="activeVideoOutput"></p>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="intensiveVideoInput">Intensive Video</label></th>
                                 <td>
-                                    <input type="number" class="form-control" id="intensiveVideoInput" value="0"
+                                    <input type="number" class="form-control" id="intensiveVideoInput" value="1"
                                         required>
                                 </td>
-                                <td><p id="intensiveVideoOutput"></p></td>
+                                <td>
+                                    <p id="intensiveVideoOutput"></p>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button"
                             class="btn btn-primary" onclick="handleSubmit(form)">Calculate</button></div>
 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h2>Results</h2>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Total GLH</th>
+                                <td id="totalGLHOutput"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Total days</th>
+                                <td id="totalDaysOutput"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Total weeks</th>
+                                <td id="totalWeeksOutput"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Projected end date</th>
+                                <td id="endDate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
