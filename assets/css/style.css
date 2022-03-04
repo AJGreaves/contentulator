@@ -1,0 +1,8 @@
+.form-select, .form-control {
+    max-width: 180px;
+}
+
+tr, td {
+    height: 57.5px;
+    vertical-align: middle;
+}
