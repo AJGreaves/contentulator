@@ -2,7 +2,7 @@
  * Handle all submit functionality
  * @param {obj} form 
  */
- function handleSubmit(form) {
+function handleSubmit(form) {
     // keys: name, glhWeight, inputID, glhOutputID
     let contentTypes = [{
             name: "textBasedUnit",
@@ -70,7 +70,7 @@
     styleResults(form, totalGLH, projectedEndDate);
 
     document.getElementById("resultsRow").classList.remove("d-none");
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 
