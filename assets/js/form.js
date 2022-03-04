@@ -2,7 +2,7 @@
  * Handle all submit functionality
  * @param {obj} form 
  */
-function handleSubmit(form) {
+ function handleSubmit(form) {
     // keys: name, glhWeight, inputID, glhOutputID
     let contentTypes = [{
             name: "textBasedUnit",
@@ -53,7 +53,7 @@ function handleSubmit(form) {
             inputID: "intensiveVideoInput",
             glhOutputID: "intensiveVideoOutput",
         },
-    ]
+    ];
 
     let avgVideoLength = document.getElementById("avgVideoLength").value;
     let contentLevel = document.getElementById("contentLevelInput").value;
@@ -62,7 +62,7 @@ function handleSubmit(form) {
     let totalNumUnits = getTotalNumUnits(contentTypes);
     let totalHoursToComplete = calculateTotalHours(form, totalNumUnits);
     let totalDaysToComplete = totalHoursToComplete / 7.5; // 7.5 hours in a work day
-    let totalWeeksToComplete = totalDaysToComplete / 5 // 5 days in a working week
+    let totalWeeksToComplete = totalDaysToComplete / 5; // 5 days in a working week
 
     let projectedEndDate = getProjectedEndDate(totalDaysToComplete);
 
@@ -102,7 +102,7 @@ function compareDates(deadlineInput, projectedEndDate) {
     // Please pay attention to the month (parts[1]); JavaScript counts months from 0:
     // January - 0, February - 1, etc.
     let deadlineAsDateObject = new Date(parts[0], parts[1] - 1, parts[2]);
-    return deadlineAsDateObject < projectedEndDate
+    return deadlineAsDateObject < projectedEndDate;
 }
 
 /**
@@ -161,7 +161,7 @@ function calculateTotalHours(form, totalNumUnits) {
         syllabusCreation: 40,
         walkthroughProjectCreation: 160, // 160 for lg
         contentCreationPerUnit: 11,
-    }
+    };
 
     if (!form.learningOutcomesDone.checked) {
         // Add hours to create learning outcomes
@@ -194,8 +194,8 @@ function calculateTotalHours(form, totalNumUnits) {
     totalHours += totalNumUnits * contentCreationHours.contentCreationPerUnit;
 
     // Add 20% to total hours as buffer
-    let totalHoursPlus20PercentBuffer = (totalHours / 100) * 120
-    return totalHoursPlus20PercentBuffer
+    let totalHoursPlus20PercentBuffer = (totalHours / 100) * 120;
+    return totalHoursPlus20PercentBuffer;
 }
 
 /**
