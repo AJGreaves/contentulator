@@ -178,7 +178,7 @@ function calculateTotalHours(form, totalNumUnits) {
         totalHours += contentCreationHours.syllabusCreation;
     }
 
-    if (!form.wtpSize.checked) {
+    if (!form.walkthroughProjectDone.checked) {
         // Add hours to create walkthrough project depending on size
         let projectSize = form.wtpSize.value;
         if (projectSize === "sm") {
