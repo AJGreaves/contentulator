@@ -234,8 +234,9 @@ function getProjectedEndDate(totalDaysToComplete) {
  * Displays calculated results in results section
  */
 function displayResults(totalGLH, totalDaysToComplete, totalWeeksToComplete, projectedEndDate) {
-    let formattedTotalGLH = formatDecimalHoursIntoHoursAndMinutes(totalGLH);
-    document.getElementById("totalGLHOutput").innerText = formattedTotalGLH;
+    // BUG causing the result from formatDecimalHoursIntoHoursAndMinutes function to return an incorrect value with intensive videos
+    // let formattedTotalGLH = formatDecimalHoursIntoHoursAndMinutes(totalGLH); 
+    document.getElementById("totalGLHOutput").innerText = totalGLH;
     document.getElementById("totalDaysOutput").innerText = totalDaysToComplete.toFixed(1);
     document.getElementById("totalWeeksOutput").innerHTML = totalWeeksToComplete.toFixed(1);
     document.getElementById("endDate").innerHTML = projectedEndDate.toLocaleDateString('en-GB');
