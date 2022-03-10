@@ -160,7 +160,7 @@ function calculateTotalHours(form, totalNumUnits) {
         assessmentCriteria: 32,
         syllabusCreation: 40,
         walkthroughProjectCreation: 160, // 160 for lg
-        contentCreationPerUnit: 11,
+        contentCreationPerUnit: 13,
     };
 
     if (!form.learningOutcomesDone.checked) {
