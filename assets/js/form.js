@@ -1,3 +1,6 @@
+/* See CI internal spreadsheet for original calulations: 
+https://docs.google.com/spreadsheets/d/1SgeSnmLfcCX98ECf_SxtY08BWv8ombo6juP9UNXc6jk/edit#gid=1391442383 */
+
 /**
  * Handle all submit functionality
  * @param {obj} form 
